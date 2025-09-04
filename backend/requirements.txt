@@ -11,6 +11,7 @@ alembic==1.12.1
 # Data validation and serialisation
 pydantic==2.5.0
 pydantic-settings==2.1.0
+email-validator==2.1.0
 
 # Environment and configuration
 python-dotenv==1.0.0
