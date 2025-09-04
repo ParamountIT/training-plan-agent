@@ -1,9 +1,7 @@
 """
 Training Plan Agent Backend Application.
 
-This package contains the FastAPI backend application for the
-Training Plan Agent, including all API endpoints, services,
-and data models.
+This package contains the FastAPI application and all its components.
 """
 
 __version__ = "1.0.0"
