@@ -1,0 +1,279 @@
+# Training Plan Agent - Development Rules
+
+## General Development Principles
+
+### British English
+- Use British English in all comments, documentation, and user-facing text
+- Examples: "analyse" not "analyze", "optimise" not "optimize", "colour" not "color"
+
+### Code Quality Standards
+- Follow PEP 8 for Python code
+- Use TypeScript strict mode for frontend
+- Implement comprehensive error handling
+- Write self-documenting code with clear variable names
+- Add type hints to all Python functions
+
+### Documentation
+- Document all public APIs and functions
+- Keep README.md updated with setup instructions
+- Maintain architecture documentation
+- Use docstrings for all classes and methods
+
+## Development Process
+
+### Pre-Development Requirements
+1. **GitHub Issues**: All development must be tracked via GitHub issues
+2. **Test-Driven Development (TDD)** approach for all features
+3. **Code Review**: All code must be reviewed before merging
+4. **Documentation**: Comprehensive documentation for all features
+5. **Architecture Review**: Before any coding begins
+
+### GitHub Issue Workflow
+1. **Create Issue**: Every feature/bug starts with a GitHub issue
+2. **Issue Template**: Use appropriate issue template (Feature, Bug, Documentation)
+3. **Issue Description**: Clear description with acceptance criteria
+4. **Issue Labels**: Use appropriate labels (enhancement, bug, documentation, etc.)
+5. **Issue Assignment**: Assign to appropriate developer
+6. **Issue Linking**: Link related issues and pull requests
+
+### TDD Process (Red-Green-Refactor)
+1. **Red**: Write failing test first
+2. **Green**: Write minimal code to make test pass
+3. **Refactor**: Clean up code while keeping tests green
+4. **Repeat**: Continue cycle for each feature
+
+### Virtual Environment Management
+- Always create and use Python virtual environments
+- Never install packages globally
+- Document all dependencies in requirements.txt
+- Use exact version pinning for production dependencies
+
+### Testing Strategy
+- Write unit tests for all business logic
+- Implement integration tests for API endpoints
+- Use pytest for Python testing
+- Use Jest for frontend testing
+- Maintain minimum 80% code coverage
+
+### Code Review Process
+- All code must be reviewed before merging
+- Use meaningful commit messages
+- Follow conventional commit format
+- Include tests with every feature
+- Link pull requests to GitHub issues
+- Require approval before merging
+
+## Project Structure Standards
+
+### Backend (FastAPI)
+```
+backend/
+├── app/
+│   ├── models/          # Pydantic models
+│   ├── services/       # Business logic
+│   ├── repositories/   # Data access layer
+│   ├── api/           # API endpoints
+│   └── utils/         # Utilities and helpers
+├── tests/             # Test files
+├── requirements.txt   # Dependencies
+└── .env.example      # Environment template
+```
+
+### Frontend (Next.js)
+```
+frontend/
+├── src/
+│   ├── app/           # Next.js app router
+│   ├── components/    # Reusable components
+│   ├── lib/          # Utilities and API clients
+│   └── hooks/        # Custom React hooks
+├── tests/            # Test files
+└── package.json      # Dependencies
+```
+
+## Database and Data Management
+
+### Repository Pattern
+- Implement abstract repository interfaces
+- Support PostgreSQL with Supabase
+- Use dependency injection for data access
+- Maintain database-agnostic design
+
+### Data Validation
+- Validate all input data with Pydantic
+- Implement comprehensive error handling
+- Use proper HTTP status codes
+- Log all data operations for debugging
+
+## API Design Standards
+
+### RESTful Endpoints
+- Use proper HTTP methods (GET, POST, PUT, DELETE)
+- Implement consistent response formats
+- Use proper status codes
+- Include pagination for list endpoints
+
+### Error Handling
+- Return structured error responses
+- Include error codes and messages
+- Log errors for debugging
+- Provide user-friendly error messages
+
+## Security and Privacy
+
+### Data Protection
+- Encrypt sensitive data at rest
+- Use HTTPS for all communications
+- Implement proper authentication
+- Follow GDPR principles for user data
+
+### API Security
+- Validate all inputs
+- Implement rate limiting
+- Use secure headers
+- Log security events
+
+## Performance Standards
+
+### Backend Performance
+- Use async/await for I/O operations
+- Implement caching where appropriate
+- Optimise database queries
+- Monitor response times
+
+### Frontend Performance
+- Optimise bundle size
+- Implement lazy loading
+- Use proper image optimisation
+- Monitor Core Web Vitals
+
+## Voice Processing Standards
+
+### Speech-to-Text
+- Use OpenAI Whisper API for accuracy
+- Implement fallback mechanisms
+- Handle different accents and speech patterns
+- Provide real-time feedback
+
+### Data Extraction
+- Parse exercise data accurately
+- Handle various input formats
+- Implement validation and correction
+- Provide user confirmation
+
+## LLM Integration Standards
+
+### Context Management
+- Build comprehensive user context
+- Include training history and preferences
+- Maintain conversation context
+- Optimise prompt engineering
+
+### Response Processing
+- Validate LLM responses
+- Implement fallback mechanisms
+- Handle edge cases gracefully
+- Provide explainable recommendations
+
+## Mobile-First Design
+
+### Responsive Design
+- Design for mobile devices first
+- Ensure touch-friendly interfaces
+- Optimise for voice input
+- Test on various screen sizes
+
+### Voice Interface
+- Design for hands-free operation
+- Provide clear audio feedback
+- Implement voice commands
+- Handle background noise
+
+## Development Workflow
+
+### Git Workflow
+- Use feature branches from GitHub issues
+- Require pull requests linked to issues
+- Squash commits before merging
+- Keep main branch stable
+- Use conventional commit format
+- Include issue numbers in commit messages
+
+### Environment Management
+- Use .env files for configuration
+- Never commit sensitive data
+- Document all environment variables
+- Use different configs for dev/staging/prod
+
+### Deployment
+- Use CI/CD pipelines
+- Implement automated testing
+- Use blue-green deployments
+- Monitor application health
+
+## Code Standards
+
+### Python Standards
+- Use type hints everywhere
+- Follow PEP 8 style guide
+- Use dataclasses where appropriate
+- Implement proper logging
+
+### TypeScript Standards
+- Use strict mode
+- Prefer interfaces over types
+- Use proper error handling
+- Implement proper state management
+
+### Testing Standards
+- Write tests first (TDD) - Red, Green, Refactor
+- Use descriptive test names
+- Mock external dependencies
+- Test edge cases
+- Maintain minimum 80% code coverage
+- Write integration tests for all endpoints
+- Test error scenarios and edge cases
+
+## Documentation Standards
+
+### Code Documentation
+- Use clear docstrings
+- Document complex algorithms
+- Include usage examples
+- Keep documentation updated
+
+### API Documentation
+- Use OpenAPI/Swagger
+- Include request/response examples
+- Document error codes
+- Keep API docs in sync with code
+
+## Monitoring and Logging
+
+### Application Monitoring
+- Monitor application performance
+- Track user interactions
+- Log all errors and exceptions
+- Monitor voice processing accuracy
+
+### Data Analytics
+- Track training plan effectiveness
+- Monitor user engagement
+- Analyse voice input patterns
+- Measure LLM recommendation quality
+
+## Future Considerations
+
+### Scalability
+- Design for horizontal scaling
+- Use microservices architecture
+- Implement proper caching
+- Plan for database migration
+
+### Maintainability
+- Write clean, readable code
+- Use proper abstractions
+- Implement proper error handling
+- Keep dependencies updated
+
+Remember: No coding without GitHub issues, TDD approach, and proper documentation!
