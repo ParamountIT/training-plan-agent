@@ -7,7 +7,7 @@ database configuration.
 
 from datetime import datetime
 from sqlalchemy import Column, Integer, DateTime
-from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import declarative_base
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 from app.utils.config import get_settings
