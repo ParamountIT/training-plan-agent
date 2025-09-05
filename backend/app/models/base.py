@@ -25,7 +25,7 @@ class TimestampMixin:
     created_at: Optional[datetime] = None
     updated_at: Optional[datetime] = None
     
-    @field_validator('created_at', 'updated_at', mode='before')
+    @field_validator('created_at', 'updated_at', mode='before', check_fields=False)
     @classmethod
     def set_timestamps(cls, v: Optional[datetime]) -> datetime:
         """Set timestamp to current time if not provided."""
